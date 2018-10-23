@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  MUTATING  and  RETURNING-NEW  LISTS.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Michael Kuznicki.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -37,7 +37,7 @@ def main():
 def run_test_doubler():
     """ Tests the    doubler    function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  doubler  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     #
@@ -83,6 +83,27 @@ def run_test_doubler():
     # TO DO 2 (continued): Add your ADDITIONAL test(s) here:
     # ------------------------------------------------------------------
 
+    # Test 2:
+    arg1 = [1, 0, 4, -2, -10, 2]
+    arg2 = [3, 12, 7, -1, -4, 0, -4, 7]
+    correct_arg1_after = [2, 0, 8, -4, -20, 4]
+    correct_arg2_after = [3, 12, 7, -1, -4, 0, -4, 7]
+    expected = [6, 24, 14, -2, -8, 0, -8, 14]
+
+    print()
+    print('BEFORE the function call:')
+    print('  Argument 1 is:', arg1)
+    print('  Argument 2 is:', arg2)
+
+    answer = doubler(arg1, arg2)
+
+    print('AFTER the function call:')
+    print('  Argument 1 is:       ', arg1)
+    print('  Argument 1 should be:', correct_arg1_after)
+    print('  Argument 2 is:       ', arg2)
+    print('  Argument 2 should be:', correct_arg2_after)
+    print('The returned value is:       ', answer)
+    print('The returned value should be:', expected)
 
 def doubler(list1, list2):
     """
@@ -102,7 +123,7 @@ def doubler(list1, list2):
         :type list2: list of int
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -111,6 +132,14 @@ def doubler(list1, list2):
     #    TIME ESTIMATE:   5 minutes.
     # ------------------------------------------------------------------
 
+    for k in range(len(list1)):
+        list1[k] = list1[k] * 2
+
+    list3 = []
+    for j in range(len(list2)):
+        x = list2[j] * 2
+        list3 = list3 + [x]
+    return list3
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

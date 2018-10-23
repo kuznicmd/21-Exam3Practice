@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Michael Kuznicki.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -45,7 +45,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ####################################################################
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -134,6 +134,15 @@ def run_test_practice_problem3():
     # SUGGESTION: Ask an assistant to CHECK your tests to confirm
     #             that they are adequate tests!
     ####################################################################
+    tests = [st.SimpleTestCase(practice_problem3,
+                               [0, 1, 1.0],
+                               [1]),
+             st.SimpleTestCase(practice_problem3,
+                               [2, 5, 0.456],
+                               [2, 6, 7, 8, 13]),
+            ]
+
+    st.SimpleTestCase.run_tests('practice_problem3', tests)
 
 
 def practice_problem3(start, n, threshold):
@@ -208,7 +217,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ####################################################################
@@ -217,6 +226,14 @@ def practice_problem3(start, n, threshold):
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
 
+    import math
+
+    integers = []
+    while len(integers) < n:
+        if math.sin(start) + math.cos(start) > threshold:
+            integers = integers + [start]
+        start = start + 1
+    return integers
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
